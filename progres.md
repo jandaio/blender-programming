@@ -7,4 +7,16 @@
 * It is not a nice IDE to work on blender python editor, I can imagine that it is better to match version and them use visual code.. on going....
 
 Visual Code
-* Plugins 
+* I follow this link https://b3d.interplanety.org/en/using-microsoft-visual-studio-code-as-external-ide-for-writing-blender-scripts-add-ons/ :
+ * install the python extension by microsoft, you can search the extension ctrl +shit +x . intelliSense (Pylance), Linting, Debugging (multi-threaded, remote), Jupyter Notebooks, code formatting, refacto . NOTE: The visual code would prompt a popup asking to install this anyways. 
+ * The blender text editor and the visual code editor intellisense does not work by default for python API's so I did this following steps:
+  * install blender_autocomplete project with git clone https://github.com/Korchy/blender_autocomplete.git  ( or you can download it from that github repository where each folder is related with the blender version that you what to use ). Example folder installed at 'C:/Users/aleco/Documents/Desarrollos/GitHub/common/blender_autocomplete/3.2'
+  * Add the following two lines on the user setting workspace JSON FILE:
+    ```json 
+    {
+       "python.linting.pylintArgs": [
+         "--init-hook",
+         "import sys; sys.path.append('C:/Users/aleco/Documents/Desarrollos/GitHub/common/blender_autocomplete/3.2')"], 
+        "python.analysis.extraPaths": ["C:/Users/aleco/Documents/Desarrollos/GitHub/common/blender_autocomplete/3.2"]
+    } 
+    ```
