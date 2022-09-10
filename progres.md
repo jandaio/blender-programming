@@ -41,4 +41,10 @@ Visual Code
      * Save output render as PNG
       ```
       blender -b "cube.blend"  -P testing.py  -o "//output\##" -F PNG -f 3
+      or
+      blender --background "cube.blend" --python testing.py  -o "//output\##" -F PNG -f 3
       ```
+     * see https://docs.blender.org/manual/en/latest/render/output/properties/output.html
+     * if I want to save as the blend file after the changes that the python script did ,
+        add this line at the end of the script bpy.ops.wm.save_as_mainfile(filepath=os.getcwd() + "\\test.blend") 
+        execute script as  blender cube.blend --background --python testing.py
