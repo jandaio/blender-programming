@@ -35,5 +35,10 @@ Visual Code
        * To execute the script press F1 and in the command prompt type “blender run script” and select “Blender: Run Script”.
        * NOTE: I had to run visual code as administrator otherwise I got a permission error, perhaps there is a diferent aproach to fix this.
        
-       
-   
+    * Run blender without open it ! Probably this can be done from a server !
+      * blender cube.blend --background --python testing.py 
+     
+     * Save output render as PNG
+      ```
+      blender -b "cube.blend"  -P testing.py  -o "//output\##" -F PNG -f 3
+      ```
